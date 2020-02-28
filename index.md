@@ -36,7 +36,7 @@ const leftPlayer = {
   cooldown: 30,
   
   // player velocity
-  dy: 10
+  dy: 0
 };
 
 const rightPlayer = {
@@ -50,7 +50,7 @@ const rightPlayer = {
   cooldown: 30,
   
   // player velocity
-  dy: 10
+  dy: 0
 };
 
 const bullets = {
