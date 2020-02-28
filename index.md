@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-<canvas width="565" height="475" id="game"></canvas>
+<canvas width="565" height="450" id="game"></canvas>
 <script>
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -33,7 +33,7 @@ const leftPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 1,
+  cooldown: 0,
   
   // player velocity
   dy: 0
@@ -47,14 +47,14 @@ const rightPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 1,
+  cooldown: 0,
   
   // player velocity
   dy: 0
 };
 
 const bullets = {
-  speed: 10,
+  speed: 15,
   array: []
 }
 
@@ -74,11 +74,11 @@ function loop() {
   
   // bullet cooldowns
   // left player
-  if (leftPlayer.cooldown > 0) {
+  if (leftPlayer.cooldown > 30) {
     leftPlayer.cooldown--;
   }
   // right player
-  if (rightPlayer.cooldown > 0) {
+  if (rightPlayer.cooldown > 30) {
     rightPlayer.cooldown--;
   }
   
@@ -102,7 +102,7 @@ function loop() {
   }
   
   // draw bullets
-  context.fillStyle = 'yellow';
+  context.fillStyle = 'red';
   bullets.array.forEach(function(bullet, index) {
     context.fillRect(bullet.x, bullet.y, 10, 5);
 	
@@ -132,12 +132,12 @@ function loop() {
   });
   
   // draw paddles
-  context.fillStyle = 'red';
+  context.fillStyle = 'white';
   context.fillRect(leftPlayer.x, leftPlayer.y, leftPlayer.width, leftPlayer.height);
   context.fillRect(rightPlayer.x, rightPlayer.y, rightPlayer.width, rightPlayer.height);
 
   // draw walls
-  context.fillStyle = 'lightgray';
+  context.fillStyle = 'white';
   context.fillRect(0, 0, canvas.width, grid);
   context.fillRect(0, canvas.height - grid, canvas.width, canvas.height);
 }
