@@ -33,10 +33,10 @@ const leftPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 0,
+  cooldown: 30,
   
   // player velocity
-  dy: 0
+  dy: 10
 };
 
 const rightPlayer = {
@@ -47,10 +47,10 @@ const rightPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 0,
+  cooldown: 30,
   
   // player velocity
-  dy: 0
+  dy: 10
 };
 
 const bullets = {
