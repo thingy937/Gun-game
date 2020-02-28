@@ -23,7 +23,7 @@ const grid = 15;
 const playerHeight = grid * 3; // 45
 const maxPlayerY = canvas.height - grid - playerHeight;
 
-var playerSpeed = 5;
+var playerSpeed = 4;
 
 const leftPlayer = {
   // start in the middle of the game on the left side
@@ -54,7 +54,7 @@ const rightPlayer = {
 };
 
 const bullets = {
-  speed: 15,
+  speed: 5,
   array: []
 }
 
