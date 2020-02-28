@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-<canvas width="565" height="500" id="game"></canvas>
+<canvas width="565" height="475" id="game"></canvas>
 <script>
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
@@ -23,7 +23,7 @@ const grid = 15;
 const playerHeight = grid * 3; // 45
 const maxPlayerY = canvas.height - grid - playerHeight;
 
-var playerSpeed = 4;
+var playerSpeed = 5;
 
 const leftPlayer = {
   // start in the middle of the game on the left side
@@ -33,7 +33,7 @@ const leftPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 0,
+  cooldown: 1,
   
   // player velocity
   dy: 0
@@ -47,14 +47,14 @@ const rightPlayer = {
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 0,
+  cooldown: 1,
   
   // player velocity
   dy: 0
 };
 
 const bullets = {
-  speed: 5,
+  speed: 10,
   array: []
 }
 
@@ -132,7 +132,7 @@ function loop() {
   });
   
   // draw paddles
-  context.fillStyle = 'gold';
+  context.fillStyle = 'red';
   context.fillRect(leftPlayer.x, leftPlayer.y, leftPlayer.width, leftPlayer.height);
   context.fillRect(rightPlayer.x, rightPlayer.y, rightPlayer.width, rightPlayer.height);
 
@@ -172,7 +172,7 @@ document.addEventListener('keydown', function(e) {
 	  height: 5,
 	  dx: -bullets.speed
 	});
-	rightPlayer.cooldown = 25;
+	rightPlayer.cooldown = 0;
   }
   // d key
   if (e.which === 68 && leftPlayer.cooldown === 0) {
@@ -183,7 +183,7 @@ document.addEventListener('keydown', function(e) {
 	  height: 5,
 	  dx: bullets.speed
 	});
-	leftPlayer.cooldown = 25;
+	leftPlayer.cooldown = 0;
   }
 });
 // listen to keyboard events to stop the player if key is released
