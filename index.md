@@ -28,12 +28,12 @@ var playerSpeed = 5;
 const leftPlayer = {
   // start in the middle of the game on the left side
   x: grid * 2,
-  y: canvas.height / 2 - playerHeight / 2,
+  y: canvas.height / 2 - playerHeight / 4,
   width: grid,
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 30,
+  cooldown: 25,
   
   // player velocity
   dy: 0
@@ -42,12 +42,12 @@ const leftPlayer = {
 const rightPlayer = {
   // start in the middle of the game on the right side
   x: canvas.width - grid * 3,
-  y: canvas.height / 2 - playerHeight / 2,
+  y: canvas.height / 2 - playerHeight / 4,
   width: grid,
   height: playerHeight,
   
   // shooting cooldown
-  cooldown: 30,
+  cooldown: 25,
   
   // player velocity
   dy: 0
